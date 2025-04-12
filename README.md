@@ -40,7 +40,7 @@ Copyright (c) 2019 Maximilian Luz.
 
 ### 1. Download and Extract the Repository
 
-Download the `OneHealthTweetIRL.zip` file and extract its contents on your local machine.
+Download the repository and extract its content on your local machine.
 
 ### 2. Run the Script
 
