@@ -44,7 +44,7 @@ Download the repository and extract its content on your local machine.
 
 ### 2. Run the Script
 
-Open your system's terminal or command prompt and navigate to the extracted folder:
+Open your system's terminal or command prompt and navigate to the extracted folder.
 
 ### 3. Run the script:
 
@@ -52,7 +52,7 @@ python3 irl_codebase.py
 
 ### 4. Examine the Results
 
-After running the script, the model will output the estimated weights for each feature, indicating their influence on tweet popularity (measured by retweet counts). 
+After running the script, the software will print the estimated weights for each feature, indicating their influence on tweet popularity (measured by retweet counts). 
 
 ## License
 
