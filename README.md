@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the codebase for implementing the MaxEnt IRL approach, as proposed by Ziebart et al. (2008) and adapted for Python by Luz, M. (2019). The approach explores some factors influencing the popularity of One Health-related tweets on X (formerly Twitter), with a particular focus on the #onehealth hashtag. This repository supports the study by Requena-Mullor et al. (under review).
+This repository contains the codebase for implementing the MaxEnt IRL approach, as proposed by Ziebart et al. (2008) and adapted for Python by Luz, M. (2019). It also includes the necessary data to replicate the results presented by Requena-Mullor et al. (under review). This study investigates factors influencing the popularity of One Health-related tweets on X (formerly Twitter), with a particular focus on the #onehealth hashtag.
 
 ## Repository Contents
 
