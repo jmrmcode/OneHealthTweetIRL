@@ -11,7 +11,7 @@ This repository contains the codebase for implementing the MaxEnt IRL approach, 
 - **`expert2_states_actions.csv`**: A CSV file containing the states and actions of expert #2.
 - **`expert3_states_actions.csv`**: A CSV file containing the states and actions of expert #3.
 - **`expert4_states_actions.csv`**: A CSV file containing the states and actions of expert #4.
-- **`features_dataframe.csv`**: A CSV file containing the matrix of states' features used for training the MaxEnt IRL model.
+- **`features_dataframe.csv`**: A CSV file containing the matrix of states' features used for training the MaxEnt IRL model (i.e., Weekly tweet count, Length of tweets, URL, Hashtag, Mention, COVID-19 cases, COVID-19 deaths, International day, and Day of the week).
 - **`probability_transition_matrix.npy`**: A NumPy file containing the probability transition matrix used in the MaxEnt IRL model.
 
 Additionally, the experts' tweets and their attributes are included:
