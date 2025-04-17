@@ -295,7 +295,7 @@ policy = extract_policy(states, actions, reward, P, V, gamma)
 labels = ['Day of the week', 'International day', 'COVID-19 deaths', 'COVID-19 cases',
           'Length of tweets', 'Weekly tweet count', 'URL', 'Hashtag', 'Mention']
 
-print("Feature weights:")
+print("\nFeature weights:")
 for label, weight in zip(labels, reward_maxent[1]):
     print(f"{label}: {weight:.6f}")
 
