@@ -52,7 +52,7 @@ python3 irl_codebase.py
 
 ### 4. Examine the Results
 
-After running the script, the software will print the estimated weights for each feature, indicating their influence on tweet popularity (measured by retweet counts). 
+After running the script, the software will print the estimated weights for each feature, indicating their influence on tweet popularity (measured by retweet counts) and both the Value Function and the Optimal Policy. 
 
 ## License
 
