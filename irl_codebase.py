@@ -226,9 +226,83 @@ l = list()
 ll = list()
 reward_maxent = maxent_irl(pp_transition, features, terminal, trajectoriesT, optim, init)# np.transpose(np.array([features[:,0]]))
 
+
+##############################################################################################################################
+###########------------    Optimal Value Function and Policy        -----------------------###################################
+
+import gridworld as W  # basic grid-world MDPs
+import solver as S  # MDP solver (value-iteration)
+
+# Define model parameters
+states = ["Very low","Low","Medium","High","Very high"]
+actions = ["Low","Medium","High"]
+num_states = len(states)
+num_actions = len(actions)
+reward = {
+    'Very low': reward_maxent[0][0],
+    'Low': reward_maxent[0][1],
+    'Medium': reward_maxent[0][2],
+    'High': reward_maxent[0][3],
+    'Very high': reward_maxent[0][4]
+}
+
+# Model parameterization
+P = pp_transition # Probability transitions
+gamma = 0.1  # Discount factor
+epsilon = 0.01  # Convergence threshold
+
+# Initialize the value function
+V = {s: 0 for s in states}
+
+# Define the required classes. For more details see Luz, M. (2019) at https://github.com/qzed/irl-maxent
+def value_iteration(states, actions, reward, P, gamma, epsilon):
+    num_states = len(states)
+    num_actions = len(actions)
+    delta = float('inf')
+    while delta > epsilon:
+        delta = 0
+        for s_idx, s in enumerate(states):
+            v = V[s]
+            V[s] = reward[s] + gamma * max(
+                sum(P[s_idx, s_prime_idx, a_idx] * V[states[s_prime_idx]] for s_prime_idx in range(num_states))
+                for a_idx in range(num_actions)
+            )
+            delta = max(delta, abs(v - V[s]))
+    return V
+
+def extract_policy(states, actions, reward, P, V, gamma):
+    num_states = len(states)
+    num_actions = len(actions)
+    policy = {}
+    for s_idx, s in enumerate(states):
+        policy[s] = actions[
+            np.argmax([
+                sum(P[s_idx, s_prime_idx, a_idx] * V[states[s_prime_idx]] for s_prime_idx in range(num_states))
+                for a_idx in range(num_actions)
+            ])
+        ]
+    return policy
+
+# Run value iteration
+V = value_iteration(states, actions, reward, P, gamma, epsilon)
+
+# Extract the optimal policy
+policy = extract_policy(states, actions, reward, P, V, gamma)
+
+
+##### Print the results
 ## Print weights with their corresponding labels
 labels = ['Day of the week', 'International day', 'COVID-19 deaths', 'COVID-19 cases',
           'Length of tweets', 'Weekly tweet count', 'URL', 'Hashtag', 'Mention']
 
+print("Feature weights:")
 for label, weight in zip(labels, reward_maxent[1]):
     print(f"{label}: {weight:.6f}")
+
+print("\nOptimal Value Function:") # the expected cumulative reward starting from state s 
+for s in states:
+    print(f"V({s}) = {V[s]:.2f}")
+
+print("\nOptimal Policy:")
+for s in states:
+    print(f"pi({s}) = {policy[s]}")
