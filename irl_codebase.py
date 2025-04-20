@@ -12,7 +12,6 @@ from itertools import product
 from sklearn.preprocessing import StandardScaler
 
 import sys, os
-#sys.path.append(os.path.abspath(os.path.join('~/set_the_system_path_to_the_irl_maxent_folder')))
 sys.path.append(os.path.abspath(os.getcwd()))
 import gridworld as W  # basic grid-world MDPs
 import trajectory as T  # trajectory generation
@@ -221,7 +220,7 @@ init = O.Constant(1.0)
 #   we select exponentiated stochastic gradient descent with linear learning-rate decay; Kivinen et. al. 1997
 optim = O.Sga(lr=O.linear_decay(lr0=0.001,decay_rate=0.07, decay_steps=1))# this parameter undirectley controls the range of weights
 
-# actually do some inverse reinforcement learning
+# do some inverse reinforcement learning
 l = list()
 ll = list()
 reward_maxent = maxent_irl(pp_transition, features, terminal, trajectoriesT, optim, init)# np.transpose(np.array([features[:,0]]))
