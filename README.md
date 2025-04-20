@@ -2,11 +2,11 @@
 
 ## Overview
 
-This repository contains the codebase for implementing the MaxEnt IRL approach, as proposed by Ziebart et al. (2008) and adapted for Python by Luz, M. (2019). It also includes the necessary data to replicate the results presented by Requena-Mullor et al. (under review). This study investigates factors influencing the popularity of One Health-related tweets on X (formerly Twitter), with a particular focus on the #onehealth hashtag.
+This repository contains the Python code and data used in the study by Requena-Mullor et al. (under review), which investigates factors influencing the popularity of One Health-related tweets on X (formerly Twitter), with a particular focus on the #onehealth hashtag. The analysis is based on the Maximum Entropy Inverse Reinforcement Learning (MaxEnt IRL) framework, originally proposed by Ziebart et al. (2008) and adapted for Python by Luz, M. (2019).
 
 ## Repository Contents
 
-- **`irl_codebase.py`**: Contains the implementation of the MaxEnt IRL approach, including code for training the IRL model using expert data. The required model inputs are listed below:
+- **`irl_codebase.py`**: Contains the implementation of the MaxEnt IRL approach, including code for training the IRL model using data from expert X accounts. The required model inputs are listed below:
 - **`expert1_states_actions.csv`**: A CSV file containing the states and actions of expert #1.
 - **`expert2_states_actions.csv`**: A CSV file containing the states and actions of expert #2.
 - **`expert3_states_actions.csv`**: A CSV file containing the states and actions of expert #3.
