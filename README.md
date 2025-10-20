@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the Python code and data used in the study "An inverse reinforcement learning approach to model health-related information popularity on X (Twitter)", published by Requena-Mullor et al. in Computing. The study investigates factors influencing the popularity of One Health-related tweets on X (formerly Twitter), with a particular focus on the #onehealth hashtag. The analysis is based on the Maximum Entropy Inverse Reinforcement Learning (MaxEnt IRL) framework, originally proposed by Ziebart et al. (2008) and adapted for Python by Luz, M. (2019).
+This repository contains the Python code and data used in the study "An inverse reinforcement learning approach to model health-related information popularity on X (Twitter)", published in Computing by Requena-Mullor et al. (2025). The study investigates factors influencing the popularity of One Health-related tweets on X (formerly Twitter), with a particular focus on the #onehealth hashtag. The analysis is based on the Maximum Entropy Inverse Reinforcement Learning (MaxEnt IRL) framework, originally proposed by Ziebart et al. (2008) and adapted for Python by Luz, M. (2019).
 
 This release has been published on Zenodo: [![DOI](https://zenodo.org/badge/965107839.svg)](https://doi.org/10.5281/zenodo.15256415).
 
